@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Spriple&#39;s Blog</title>
-    <link>https://www.spriple.cn/tags/</link>
+    <link>https://yiquanfeng.github.io/tags/</link>
     <description>Recent content in Tags on Spriple&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>yiquanfeng@qq.com (Spriple)</managingEditor>
     <webMaster>yiquanfeng@qq.com (Spriple)</webMaster>
     <copyright>© 2025 Spriple</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 15:54:32 +0800</lastBuildDate><atom:link href="https://www.spriple.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Feb 2025 15:54:32 +0800</lastBuildDate><atom:link href="https://yiquanfeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Archlinux</title>
-      <link>https://www.spriple.cn/tags/archlinux/</link>
+      <link>https://yiquanfeng.github.io/tags/archlinux/</link>
       <pubDate>Sat, 08 Feb 2025 15:54:32 +0800</pubDate>
       <author>yiquanfeng@qq.com (Spriple)</author>
-      <guid>https://www.spriple.cn/tags/archlinux/</guid>
+      <guid>https://yiquanfeng.github.io/tags/archlinux/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>备份</title>
-      <link>https://www.spriple.cn/tags/%E5%A4%87%E4%BB%BD/</link>
+      <link>https://yiquanfeng.github.io/tags/%E5%A4%87%E4%BB%BD/</link>
       <pubDate>Sat, 08 Feb 2025 15:54:32 +0800</pubDate>
       <author>yiquanfeng@qq.com (Spriple)</author>
-      <guid>https://www.spriple.cn/tags/%E5%A4%87%E4%BB%BD/</guid>
+      <guid>https://yiquanfeng.github.io/tags/%E5%A4%87%E4%BB%BD/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://www.spriple.cn/tags/github/</link>
+      <link>https://yiquanfeng.github.io/tags/github/</link>
       <pubDate>Sat, 01 Feb 2025 21:54:09 +0800</pubDate>
       <author>yiquanfeng@qq.com (Spriple)</author>
-      <guid>https://www.spriple.cn/tags/github/</guid>
+      <guid>https://yiquanfeng.github.io/tags/github/</guid>
       <description></description>
       
     </item>

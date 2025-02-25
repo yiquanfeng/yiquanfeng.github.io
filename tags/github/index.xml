@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Spriple&#39;s Blog</title>
-    <link>https://www.spriple.cn/tags/github/</link>
+    <link>https://yiquanfeng.github.io/tags/github/</link>
     <description>Recent content in Github on Spriple&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>yiquanfeng@qq.com (Spriple)</managingEditor>
     <webMaster>yiquanfeng@qq.com (Spriple)</webMaster>
     <copyright>© 2025 Spriple</copyright>
-    <lastBuildDate>Sat, 01 Feb 2025 21:54:09 +0800</lastBuildDate><atom:link href="https://www.spriple.cn/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Feb 2025 21:54:09 +0800</lastBuildDate><atom:link href="https://yiquanfeng.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Learn Github Contributions</title>
-      <link>https://www.spriple.cn/posts/learn_github/</link>
+      <link>https://yiquanfeng.github.io/posts/learn_github/</link>
       <pubDate>Sat, 01 Feb 2025 21:54:09 +0800</pubDate>
       <author>yiquanfeng@qq.com (Spriple)</author>
-      <guid>https://www.spriple.cn/posts/learn_github/</guid>
+      <guid>https://yiquanfeng.github.io/posts/learn_github/</guid>
       <description></description>
       
     </item>
