@@ -9,7 +9,27 @@
     <managingEditor>yiquanfeng@qq.com (Spriple)</managingEditor>
     <webMaster>yiquanfeng@qq.com (Spriple)</webMaster>
     <copyright>© 2025 Spriple</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 15:54:32 +0800</lastBuildDate><atom:link href="https://yiquanfeng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Mar 2025 20:28:23 +0800</lastBuildDate><atom:link href="https://yiquanfeng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>玩转泰山派（1） 确定游玩路线</title>
+      <link>https://yiquanfeng.github.io/posts/tspi1/</link>
+      <pubDate>Wed, 05 Mar 2025 20:28:23 +0800</pubDate>
+      <author>yiquanfeng@qq.com (Spriple)</author>
+      <guid>https://yiquanfeng.github.io/posts/tspi1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Friends</title>
+      <link>https://yiquanfeng.github.io/friends/</link>
+      <pubDate>Fri, 28 Feb 2025 12:02:21 +0800</pubDate>
+      <author>yiquanfeng@qq.com (Spriple)</author>
+      <guid>https://yiquanfeng.github.io/friends/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>使用tar备份整个archlinux系统，并在其他电脑上恢复如初</title>
