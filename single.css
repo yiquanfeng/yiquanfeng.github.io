@@ -1,0 +1,14 @@
+.content {
+    margin-left: 130px;    /* 左边距 */
+    margin-right: 100px;   /* 右边距 */
+    max-width: 3000px;    /* 可选最大宽度限制 */
+    text-align: left;     /* 左对齐 */
+    
+    /* 自动换行设置 */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    
+    /* 更现代的写法（推荐） */
+    word-wrap: break-word;
+    hyphens: auto;        /* 可选自动连字符 */
+}

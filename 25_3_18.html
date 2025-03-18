@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nginx拒绝提供错误界面的黑暗模式的支持</title>
+        <link rel="stylesheet" href="./single.css"
+    </head>
+    <body>
+        <h1 align="center">Nginx拒绝提供错误界面的黑暗模式的支持</h1>
+        <a href="https://www.phoronix.com/news/Nginx-Dark-Mode-Errors-Rejected">原文链接</a>
+        <div class="content">
+            <p>
+                在上周，有一个关于支持Nginx错误界面的黑暗模式的拉取请求被提出。对于那些喜欢使用
+                黑暗模式浏览网页然后被Nginx的404 not found界面几乎全白的界面刺激到眼睛或者有相同
+                经历的人来说，很不幸，这个拉取请求被拒绝了
+            </p>
+            <p>
+                这个对上游Nginx网页服务器的拉取请求实际上是添加了使用"light dark"值的color-scheme元标签的一种
+                简单但有效的处理原生黑暗模式支持(如果操作系统或者网页浏览器支持的话)。这个拉取请求添加了这样的元标签
+                到每一个Nginx为所有标准http错误建立的相关错误界面
+            </p>
+            <p>
+                今天这个拉取请求最终被拒绝了，理由是Nginx的默认错误页面需要简洁，并且似乎添加额外的tag是
+                不必要的。在关闭这个合并请求的讨论过程中，Nginx作者推荐服务器的管理员使用error_page指令，
+                然后创建他们自定义的错误界面，如果不喜欢Nginx默认的对黑暗模式不友好的错误界面
+            </p>
+        </div>
+    </body>
+</html>
