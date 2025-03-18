@@ -1,1 +1,1 @@
-visit it via [Spriple's Blog](https://yiquanfeng.github.io/main.html)
+visit it via [Spriple's Blog](https://yiquanfeng.github.io/)
