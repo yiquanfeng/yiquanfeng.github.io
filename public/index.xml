@@ -6,8 +6,15 @@
     <description>Recent content in Home on Spriple&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Aug 2025 07:43:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Aug 2025 07:52:20 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>yiquanfeng</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 04 Aug 2025 07:52:20 +0800</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;still working in this page&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sudo</title>
       <link>http://localhost:1313/posts/sudo/</link>

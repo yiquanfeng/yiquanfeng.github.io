@@ -1,15 +1,13 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://yiquanfeng.github.io/'
 languageCode = 'en-us'
 title = "Spriple's Blog"
 theme = 'typo'
 
 [params]
-# Meta description
 description = "A web"
 
 paginationSize = 100
 
-# Collection to display on home
 homeCollectionTitle = 'Posts'
 homeCollection = 'posts'
 
