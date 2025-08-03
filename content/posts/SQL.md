@@ -18,3 +18,4 @@ sudo -u postgres initdb -D /var/lib/postgres/data
 ```
 然后输出你自己的账户密码即可
 更多sudo妙用参照[sudo.md](/2025/08/04/sudo/)
+test
