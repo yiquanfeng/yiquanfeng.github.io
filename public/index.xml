@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Spriple&#39;s Blog</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Spriple&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Aug 2025 06:35:54 +0800</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Aug 2025 07:43:12 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sudo</title>
+      <link>http://localhost:1313/posts/sudo/</link>
+      <pubDate>Mon, 04 Aug 2025 07:43:12 +0800</pubDate>
+      <guid>http://localhost:1313/posts/sudo/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;sudo-的妙用&#34;&gt;&#xA;  Sudo 的妙用&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#sudo-%e7%9a%84%e5%a6%99%e7%94%a8&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;后悔药&#34;&gt;&#xA;  后悔药&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%90%8e%e6%82%94%e8%8d%af&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo !!&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用sudo提权然后执行上一条忘记使用sudo的命令，这里的！！是广泛使用的，都可以代表上一条指令&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -i&#xA;sudo -u postgres&#xA;sudo -e&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>SQL</title>
-      <link>https://example.org/posts/sql/</link>
+      <link>http://localhost:1313/posts/sql/</link>
       <pubDate>Mon, 04 Aug 2025 06:35:54 +0800</pubDate>
-      <guid>https://example.org/posts/sql/</guid>
-      <description>&lt;h2 class=&#34;heading&#34; id=&#34;postgres的初始化&#34;&gt;&#xA;  postgres的初始化&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#postgres%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;开局就会遇到不利，在linux server安装postgres之后&#xA;会有postgres的用户，一开始我们需要以postgres的身份执行&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用来初始化postgres的数据库&#xA;但是你会发现你如果直接sudo或者su postgres，要么就是没有权限执行初始化的代码，要么就是由于不知道postgres的账户密码导致无法进行。&#xA;接下来就是sudo发挥妙用的时候了&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -u postgres initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后输出你自己的账户密码即可&#xA;更多sudo妙用参照&lt;a href=&#34;https://example.org/2025/08/04/sudo/&#34;&gt;sudo.md&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/sql/</guid>
+      <description>&lt;h2 class=&#34;heading&#34; id=&#34;postgres的初始化&#34;&gt;&#xA;  postgres的初始化&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#postgres%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;开局就会遇到不利，在linux server安装postgres之后&#xA;会有postgres的用户，一开始我们需要以postgres的身份执行&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用来初始化postgres的数据库&#xA;但是你会发现你如果直接sudo或者su postgres，要么就是没有权限执行初始化的代码，要么就是由于不知道postgres的账户密码导致无法进行。&#xA;接下来就是sudo发挥妙用的时候了&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -u postgres initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后输出你自己的账户密码即可&#xA;更多sudo妙用参照&lt;a href=&#34;http://localhost:1313/posts/sudo/&#34;&gt;sudo.md&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

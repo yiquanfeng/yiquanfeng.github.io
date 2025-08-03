@@ -7,6 +7,8 @@ theme = 'typo'
 # Meta description
 description = "A web"
 
+paginationSize = 100
+
 # Collection to display on home
 homeCollectionTitle = 'Posts'
 homeCollection = 'posts'
