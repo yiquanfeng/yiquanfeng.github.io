@@ -1,0 +1,16 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = "Spriple's Blog"
+theme = 'typo'
+
+[params]
+# Meta description
+description = "A web"
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+[[params.menu]]
+name = "about"
+url = "/about"

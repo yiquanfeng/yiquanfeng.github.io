@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Spriple&#39;s Blog</title>
+    <link>https://example.org/</link>
+    <description>Recent content in Home on Spriple&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Aug 2025 06:35:54 +0800</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL</title>
+      <link>https://example.org/posts/sql/</link>
+      <pubDate>Mon, 04 Aug 2025 06:35:54 +0800</pubDate>
+      <guid>https://example.org/posts/sql/</guid>
+      <description>&lt;h2 class=&#34;heading&#34; id=&#34;postgres的初始化&#34;&gt;&#xA;  postgres的初始化&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#postgres%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;开局就会遇到不利，在linux server安装postgres之后&#xA;会有postgres的用户，一开始我们需要以postgres的身份执行&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用来初始化postgres的数据库&#xA;但是你会发现你如果直接sudo或者su postgres，要么就是没有权限执行初始化的代码，要么就是由于不知道postgres的账户密码导致无法进行。&#xA;接下来就是sudo发挥妙用的时候了&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -u postgres initdb -D /var/lib/postgres/data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后输出你自己的账户密码即可&#xA;更多sudo妙用参照&lt;a href=&#34;https://example.org/2025/08/04/sudo/&#34;&gt;sudo.md&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
