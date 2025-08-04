@@ -18,3 +18,21 @@ sudo -u postgres initdb -D /var/lib/postgres/data
 ```
 然后输出你自己的账户密码即可
 更多sudo妙用参照[sudo.md](/posts/sudo/)
+
+
+## basic function of postgresql
+> only **dropdb** and **createdb** is excuted in your shell
+
+\l to list the database   
+\d to list the tables   
+\c to enter the databse, if you just \c,then re-enter your present database   
+CREATE DATABASE + name / createdb  
+DROP DATABASE + name / dropdb  
+CREATE TABLE to create a data table  
+```
+CREATE TABLE COMPANY(
+    ID INT PRIMARY KEY NOT NULL,
+    NAME CHAR(50)
+);```
+
+
