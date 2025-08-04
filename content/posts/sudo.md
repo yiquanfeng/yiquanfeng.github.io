@@ -8,7 +8,11 @@ title = 'Sudo'
 ```
 sudo !!
 ```
-使用sudo提权然后执行上一条忘记使用sudo的命令，这里的！！是广泛使用的，都可以代表上一条指令
+> 这个后悔药只能在bash兼容的shell环境中使用,fish中使用会出现
+> ```
+> fish: Unknown command: !!
+> ```
+使用sudo提权然后执行上一条忘记使用sudo的命令，这里的!!代表上一条指令
 
 ```
 sudo -i
