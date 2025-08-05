@@ -24,6 +24,35 @@ sudo -u postgres initdb -D /var/lib/postgres/data
 ```
 psql -u user_name -d database_name -f file_path
 ```
+### upper and lower case
+in postgresql, the upper ans lower often case some problem  
+if you create a table named "User"  
+then you want to search the table in sql language
+you input 
+```
+\d User
+```
+but you may see
+```
+prisma_test=# \d User
+Did not find any relation named "User".
+```
+because the psql convert the User to user  
+but your db does not have user, so this is the result  
+So you need to use
+```
+\d "User"
+```
+that is ok
+```
+prisma_test=# \d "User"
+                             Table "public.User"
+ Column |  Type   | Collation | Nullable |              Default               
+--------+---------+-----------+----------+------------------------------------
+ id     | integer |           | not null | nextval('"User_id_seq"'::regclass)
+ email  | text    |           | not null | 
+ name   | text    |           |          | 
+```
 
 ## basic function of postgresql
 > only **dropdb** and **createdb** is excuted in your shell

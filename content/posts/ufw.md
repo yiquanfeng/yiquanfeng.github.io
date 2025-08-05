@@ -34,6 +34,16 @@ incoming 代表所有外界主动向你发起的流量
 outgoing是你主动向外面发起的流量（比如下载，你主动发起，但是是请求外面的流量）  
 routed代表的是转发流量，如果你的主机是作为中转流量的网关或者跳板机的话，可以研究一下如何设置  
 
+## 删除创建的规则
+there are two ways to del the rules
+```
+ufw delete allow 22/tcp
+ufw delete [the line number of status]
+```
+
+## how to tag the rules in status
+
+
 ## tips
 ufw在archlinux上安装之后，需要enable两个地方之后，重新启动一下  
 然后才能成功reload并且进行规则的设置，不然很容易出现
