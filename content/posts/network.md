@@ -7,3 +7,4 @@ title = '网络排查步骤'
 ping --- icmp  
 telnet curl  -- tcp/ip  
 ss lsof -i  -- port  
+traceroute 

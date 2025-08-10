@@ -7,7 +7,7 @@ title = 'Prisma'
 
 ## Install
 ```
-npm install prisma tsx typescript @type/node --save-dev
+npm install prisma tsx typescript @types/node --save-dev
 npm install @prisma/client
 ```
 
@@ -49,3 +49,19 @@ model User {
   profile Profile?
 }
 ```
+then
+
+### in a setup before database
+```
+npx prisma pull
+npx prisma generate
+```
+pull the old data to your schems.prisma  
+and generate a client to use for ts code  
+then you can add some column in schema.prisma  
+then
+```
+npx 
+```
+
+## design is not easy

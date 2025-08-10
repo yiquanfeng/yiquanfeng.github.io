@@ -181,7 +181,7 @@ mac=# select * from company where age >= 25 and salary > 20000;
   5 | David |  27 | Texas                                              |  85000
 (2 行记录)
 ```
-## bit
+### bit
 | # << >> & ~
 
 ### some unusual expression
@@ -213,3 +213,24 @@ mac-# ;
 ## where expression
 ## update 
 ## like subsentence
+## Backup and Restore
+### export the database to human-readable file
+```
+pg_dump -U [user_name] -h [host] -p [port] [database_name] > name_date.sql
+```
+then you can read your name_date.sql file
+
+### export the database to a small and strong file
+```
+// -F c stand for the custom format
+pg_dump -U [user_name] -h [host] -p [port] -F c -f name.dump [database_name]
+```
+
+### restore from sql file
+```
+psql ...
+```
+### restore from dump file
+```
+pg_restore ...
+```
