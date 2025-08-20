@@ -64,4 +64,7 @@ then
 npx 
 ```
 
-## design is not easy
+## Design the schma
+一对一  使用外键加unique
+一对多  使用外键不加unique
+多对多  使用关系表，复合主键
