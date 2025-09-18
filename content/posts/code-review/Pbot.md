@@ -206,9 +206,9 @@ class SingalContent {
 }
 ```
 其中，singlemessage是对于发送单条群消息的兼容，nodecontent是消息集合中的其中一条消息
-![alt text](image.png)
+![a image](static/images/image.png)
 这是发送单条消息的json构造图  
-![](image-1.png)
+![a image](static/images/image-1.png)
 这是发送消息集合的json构造图  
 
 

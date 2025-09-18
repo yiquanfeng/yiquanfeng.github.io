@@ -12,5 +12,6 @@ uv pip install vllm --torch-backend=auto   // can not just use pip
 ```
 然后可以直接使用
 ```
-
+vllm server
 ```
+this is a test
