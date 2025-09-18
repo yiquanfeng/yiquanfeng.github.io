@@ -1,7 +1,7 @@
 +++
 date = '2025-08-20T23:47:03+08:00'
 draft = false
-title = '运维工具1--ssh'
+title = 'ssh'
 +++
 > 这篇文章借助了gemini，gemini对于ssh的理解感觉很深了，我基本就是复述
 >和实操，加了一点自己使用ssh的经验
@@ -64,3 +64,13 @@ Port 19191
 ## the difference of ssh and sshd
 ssh_config配置文件在linux服务器中，配置的是本身连接其他远程主机的行为
 sshd_config配置文件在linux服务器中，配置的是别人连接自己时候的验证配置，并且存在sshd service，因为它需要常驻后台
+
+## extra content
+如果你在写脚本，想要在远程执行一系列的shell命令，下面有一个好的脚本范例
+```
+ssh user@ip << 'EOF'
+first command
+second command
+third command
+EOF
+```
