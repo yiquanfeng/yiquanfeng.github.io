@@ -1,6 +1,5 @@
 +++
 title: font
-description:
 date: 2025-09-19T00:15:07+00:00
 draft: false
 +++
