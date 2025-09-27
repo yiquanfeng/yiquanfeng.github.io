@@ -16,7 +16,7 @@ title = '本地知识库demo'
 - tokenizer(分词器)
 - 
 ## the talk function
-```python
+```
 
 client = OpenAI(
 
@@ -50,7 +50,7 @@ return completion.choices[0].message.content
 
 ## the embedding function
 
-```python
+```
 emb = OpenAIEmbeddings(
 
 base_url="https://api.siliconflow.cn/v1",
@@ -64,7 +64,7 @@ model="Qwen/Qwen3-Embedding-4B"
 
 
 ## the process of markdown and pdf
-```python
+```
 def process_md(path:str)->str:
 
 from langchain_community.document_loaders.markdown import UnstructuredMarkdownLoader
@@ -93,7 +93,7 @@ return pdf
 ### data preprocess
 not have
 ### the chunk strategy
-```python
+```
 splitter = RecursiveCharacterTextSplitter(
 
 chunk_size=200,

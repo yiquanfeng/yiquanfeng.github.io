@@ -8,7 +8,7 @@ title = 'Kafka'
 brew install kafka
 kafka-topics --version
 ```
-```docker
+```
 docker pull apache/kafka:4.1.0
 docker run -d --name kafka -p 9092:9092 apache/kafka:4.1.0
 docker exec -it kafka bash
