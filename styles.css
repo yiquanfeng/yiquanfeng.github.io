@@ -78,24 +78,25 @@ body {
 
 .works-board {
   display: grid;
-  width: min(32vw, 360px);
-  grid-template-columns: repeat(2, minmax(96px, 1fr));
+  width: min(30vw, 330px);
+  grid-template-columns: repeat(3, minmax(84px, 1fr));
   flex: 0 0 auto;
   align-content: start;
   grid-auto-rows: auto;
-  gap: 10px;
-  padding: 12px;
+  gap: 8px;
+  padding: 10px;
   border: 2px solid var(--line);
   border-radius: var(--radius-lg);
   background: #f2f2ea;
 }
 
 .work-tile {
-  min-height: 72px;
+  aspect-ratio: 1 / 1;
+  min-height: 84px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 8px;
   border: 2px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--tile);
@@ -115,14 +116,14 @@ body {
 }
 
 .work-name {
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .work-link {
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.64rem;
 }
 
 .is-placeholder {
@@ -295,8 +296,8 @@ body {
 
 @media (max-width: 760px) {
   .works-board {
-    width: min(100%, 320px);
-    grid-template-columns: repeat(2, minmax(96px, 1fr));
+    width: min(100%, 330px);
+    grid-template-columns: repeat(3, minmax(84px, 1fr));
   }
 
   .tool-grid {
@@ -332,11 +333,11 @@ body {
 
   .works-board {
     width: 100%;
-    grid-template-columns: 1fr;
-    padding: 12px;
+    grid-template-columns: repeat(2, minmax(84px, 1fr));
+    padding: 10px;
   }
 
   .work-tile {
-    min-height: 72px;
+    min-height: 84px;
   }
 }
