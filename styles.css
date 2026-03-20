@@ -41,10 +41,6 @@ body {
   flex-direction: column;
 }
 
-.home-layout {
-  align-items: flex-start;
-}
-
 .profile-card {
   display: flex;
   align-items: center;
@@ -78,13 +74,14 @@ body {
 
 .works-board {
   display: grid;
-  width: min(30vw, 330px);
-  grid-template-columns: repeat(3, minmax(84px, 1fr));
-  flex: 0 0 auto;
+  width: 100%;
+  grid-template-columns: repeat(3, 112px);
+  flex: 1;
+  justify-content: start;
   align-content: start;
-  grid-auto-rows: auto;
-  gap: 8px;
-  padding: 10px;
+  grid-auto-rows: 112px;
+  gap: 12px;
+  padding: 16px;
   border: 2px solid var(--line);
   border-radius: var(--radius-lg);
   background: #f2f2ea;
@@ -92,11 +89,11 @@ body {
 
 .work-tile {
   aspect-ratio: 1 / 1;
-  min-height: 84px;
+  min-height: 112px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 8px;
+  padding: 10px;
   border: 2px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--tile);
@@ -116,14 +113,14 @@ body {
 }
 
 .work-name {
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .work-link {
   color: var(--muted);
-  font-size: 0.64rem;
+  font-size: 0.68rem;
 }
 
 .is-placeholder {
@@ -296,8 +293,8 @@ body {
 
 @media (max-width: 760px) {
   .works-board {
-    width: min(100%, 330px);
-    grid-template-columns: repeat(3, minmax(84px, 1fr));
+    grid-template-columns: repeat(3, 96px);
+    grid-auto-rows: 96px;
   }
 
   .tool-grid {
@@ -333,11 +330,13 @@ body {
 
   .works-board {
     width: 100%;
-    grid-template-columns: repeat(2, minmax(84px, 1fr));
-    padding: 10px;
+    grid-template-columns: repeat(2, 96px);
+    grid-auto-rows: 96px;
+    gap: 10px;
+    padding: 12px;
   }
 
   .work-tile {
-    min-height: 84px;
+    min-height: 96px;
   }
 }
