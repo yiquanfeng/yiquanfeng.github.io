@@ -3,173 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yiquan Feng | 作品集</title>
-    <meta
-      name="description"
-      content="Yiquan Feng 的个人作品展示站，包含精选项目、技术方向与联系方式。"
-    />
+    <title>Yiquan Feng | Works</title>
+    <meta name="description" content="Yiquan Feng 的简洁作品展示页。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
-        <nav class="topbar">
-          <a class="brand" href="#top">YF</a>
-          <div class="nav-links">
-            <a href="#projects">作品</a>
-            <a href="#about">简介</a>
-            <a href="#contact">联系</a>
-          </div>
-        </nav>
-
-        <div class="hero-content" id="top">
-          <p class="eyebrow">Portfolio / Frontend / Projects</p>
-          <h1>把想法做成可以被看见、被使用的界面。</h1>
-          <p class="hero-copy">
-            这是 Yiquan Feng 的在线作品展示页。这里放精选项目、设计思路和正在做的方向，
-            结构简单，但足够清晰，适合作为 GitHub Pages 的个人首页。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">查看作品</a>
-            <a class="button button-secondary" href="#contact">联系我</a>
-          </div>
+    <main class="layout">
+      <section class="profile-card">
+        <img
+          class="avatar"
+          src="https://github.com/yiquanfeng.png"
+          alt="Yiquan Feng GitHub Avatar"
+        />
+        <div class="profile-copy">
+          <h1>Yiquan Feng</h1>
+          <p>作品展示</p>
         </div>
+      </section>
 
-        <div class="hero-panel">
-          <div class="panel-label">Current Focus</div>
-          <ul class="focus-list">
-            <li>Web 前端体验</li>
-            <li>工具类项目设计</li>
-            <li>简洁但有辨识度的视觉表达</li>
-          </ul>
-        </div>
-      </header>
-
-      <main>
-        <section class="section" id="projects">
-          <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>精选作品</h2>
-            <p>
-              先放三类常见项目卡片作为模板。你后续只需要修改标题、描述、链接和技术栈即可。
-            </p>
-          </div>
-
-          <div class="project-grid">
-            <article class="project-card reveal">
-              <span class="project-index">01</span>
-              <h3>作品名称 A</h3>
-              <p>
-                一个面向实际使用场景的 Web 项目，重点是信息组织、交互反馈与可读性。
-              </p>
-              <ul class="tag-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/yiquanfeng" target="_blank" rel="noreferrer">源码</a>
-                <a href="#" aria-disabled="true">演示</a>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <span class="project-index">02</span>
-              <h3>作品名称 B</h3>
-              <p>
-                一个偏工具属性的项目，关注效率、结构稳定性，以及界面中的关键操作路径。
-              </p>
-              <ul class="tag-list">
-                <li>UI</li>
-                <li>Responsive</li>
-                <li>GitHub Pages</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/yiquanfeng" target="_blank" rel="noreferrer">源码</a>
-                <a href="#" aria-disabled="true">演示</a>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <span class="project-index">03</span>
-              <h3>作品名称 C</h3>
-              <p>
-                一个仍在持续迭代的实验项目，用来尝试新的布局、组件形式或内容表达方式。
-              </p>
-              <ul class="tag-list">
-                <li>Design</li>
-                <li>Motion</li>
-                <li>Prototype</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/yiquanfeng" target="_blank" rel="noreferrer">源码</a>
-                <a href="#" aria-disabled="true">演示</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section about-section" id="about">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>关于我</h2>
-          </div>
-
-          <div class="about-layout">
-            <div class="about-card reveal">
-              <p>
-                我关注网页的实际使用体验，也在意页面是否足够简洁、准确和有记忆点。
-                比起堆砌效果，我更在乎内容是否被清楚地呈现出来。
-              </p>
-            </div>
-            <div class="about-card reveal">
-              <p>
-                这个首页目前是一个可直接上线的基础版本，适合继续补充真实项目截图、
-                项目链接、个人简介和社交账号。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section stack-section">
-          <div class="section-heading">
-            <p class="eyebrow">Toolkit</p>
-            <h2>技术关注点</h2>
-          </div>
-
-          <div class="stack-list reveal">
-            <span>Frontend Development</span>
-            <span>Responsive Layout</span>
-            <span>Interaction Design</span>
-            <span>Static Site Delivery</span>
-            <span>GitHub Workflow</span>
-            <span>Product Thinking</span>
-          </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>联系我</h2>
-            <p>把下面这些占位信息替换成你的真实邮箱、GitHub 和其它主页即可。</p>
-          </div>
-
-          <div class="contact-card reveal">
-            <a href="mailto:your-email@example.com">your-email@example.com</a>
-            <a href="https://github.com/yiquanfeng" target="_blank" rel="noreferrer">
-              github.com/yiquanfeng
-            </a>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <script src="./script.js"></script>
+      <section class="works-board" aria-label="作品链接列表">
+        <a class="work-tile" href="https://github.com/yiquanfeng/yiquanfeng.github.io" target="_blank" rel="noreferrer">
+          <span class="work-name">这个主页</span>
+          <span class="work-link">GitHub</span>
+        </a>
+        <a class="work-tile" href="https://github.com/yiquanfeng" target="_blank" rel="noreferrer">
+          <span class="work-name">GitHub Profile</span>
+          <span class="work-link">Open</span>
+        </a>
+        <a class="work-tile is-placeholder" href="#">
+          <span class="work-name">作品 03</span>
+          <span class="work-link">待替换</span>
+        </a>
+        <a class="work-tile is-placeholder" href="#">
+          <span class="work-name">作品 04</span>
+          <span class="work-link">待替换</span>
+        </a>
+        <a class="work-tile is-placeholder" href="#">
+          <span class="work-name">作品 05</span>
+          <span class="work-link">待替换</span>
+        </a>
+        <a class="work-tile is-placeholder" href="#">
+          <span class="work-name">作品 06</span>
+          <span class="work-link">待替换</span>
+        </a>
+      </section>
+    </main>
   </body>
 </html>
