@@ -41,6 +41,10 @@ body {
   flex-direction: column;
 }
 
+.home-layout {
+  align-items: flex-start;
+}
+
 .profile-card {
   display: flex;
   align-items: center;
@@ -74,24 +78,24 @@ body {
 
 .works-board {
   display: grid;
-  width: min(36vw, 480px);
-  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  width: min(32vw, 360px);
+  grid-template-columns: repeat(2, minmax(96px, 1fr));
   flex: 0 0 auto;
   align-content: start;
   grid-auto-rows: auto;
-  gap: 14px;
-  padding: 16px;
+  gap: 10px;
+  padding: 12px;
   border: 2px solid var(--line);
   border-radius: var(--radius-lg);
   background: #f2f2ea;
 }
 
 .work-tile {
-  min-height: 88px;
+  min-height: 72px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px;
+  padding: 10px;
   border: 2px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--tile);
@@ -111,14 +115,14 @@ body {
 }
 
 .work-name {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .work-link {
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.7rem;
 }
 
 .is-placeholder {
@@ -291,8 +295,8 @@ body {
 
 @media (max-width: 760px) {
   .works-board {
-    width: min(100%, 420px);
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    width: min(100%, 320px);
+    grid-template-columns: repeat(2, minmax(96px, 1fr));
   }
 
   .tool-grid {
@@ -329,10 +333,10 @@ body {
   .works-board {
     width: 100%;
     grid-template-columns: 1fr;
-    padding: 14px;
+    padding: 12px;
   }
 
   .work-tile {
-    min-height: 84px;
+    min-height: 72px;
   }
 }
