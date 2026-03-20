@@ -74,10 +74,11 @@ body {
 
 .works-board {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  flex: 1;
-  align-content: stretch;
-  grid-auto-rows: minmax(0, 1fr);
+  width: min(36vw, 480px);
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  flex: 0 0 auto;
+  align-content: start;
+  grid-auto-rows: auto;
   gap: 14px;
   padding: 16px;
   border: 2px solid var(--line);
@@ -86,11 +87,11 @@ body {
 }
 
 .work-tile {
-  min-height: 126px;
+  min-height: 88px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px;
+  padding: 12px;
   border: 2px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--tile);
@@ -110,14 +111,14 @@ body {
 }
 
 .work-name {
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .work-link {
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.76rem;
 }
 
 .is-placeholder {
@@ -290,7 +291,8 @@ body {
 
 @media (max-width: 760px) {
   .works-board {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 420px);
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
 
   .tool-grid {
@@ -325,11 +327,12 @@ body {
   }
 
   .works-board {
+    width: 100%;
     grid-template-columns: 1fr;
     padding: 14px;
   }
 
   .work-tile {
-    min-height: 92px;
+    min-height: 84px;
   }
 }
