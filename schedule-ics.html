@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule to ICS</title>
+    <meta
+      name="description"
+      content="把学校课表 CSV 转换为 ICS 日历文件。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="tool-layout">
+      <section class="tool-header">
+        <a class="back-link" href="./index.html">← Back</a>
+        <h1>Schedule to ICS</h1>
+        <p>上传整理好的课表 CSV，生成可导入系统日历的 `.ics` 文件。</p>
+      </section>
+
+      <section class="tool-grid">
+        <form class="tool-panel" id="ics-form">
+          <label class="field">
+            <span>学期第一周周一</span>
+            <input id="term-start" type="date" required />
+          </label>
+
+          <label class="field">
+            <span>上传课表 CSV</span>
+            <input id="csv-file" type="file" accept=".csv,text/csv" required />
+          </label>
+
+          <div class="field">
+            <span>CSV 表头格式</span>
+            <code class="inline-code">course,weekday,startTime,endTime,weeks,location,teacher,note</code>
+          </div>
+
+          <div class="field">
+            <span>说明</span>
+            <ul class="helper-list">
+              <li>`weekday` 支持 `1-7`、`周一` 到 `周日`。</li>
+              <li>`weeks` 支持 `1-16`、`1,3,5`、`1-8,10-16`。</li>
+              <li>`location`、`teacher`、`note` 可留空。</li>
+            </ul>
+          </div>
+
+          <div class="tool-actions">
+            <button class="action-button" type="submit">生成 ICS</button>
+            <button class="ghost-button" id="download-template" type="button">
+              下载 CSV 模板
+            </button>
+          </div>
+        </form>
+
+        <section class="tool-panel output-panel">
+          <div class="status-block">
+            <h2>输出</h2>
+            <p id="status-text">还没有生成文件。</p>
+          </div>
+
+          <div class="download-row">
+            <a class="action-button disabled" id="download-ics" href="#" download="schedule.ics">
+              下载 ICS
+            </a>
+          </div>
+
+          <div class="preview-block">
+            <h2>预览</h2>
+            <pre id="preview-text">等待上传课表。</pre>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./schedule-ics.js"></script>
+  </body>
+</html>
