@@ -77,7 +77,7 @@ body {
   width: 100%;
   grid-template-columns: repeat(3, 112px);
   flex: 1;
-  justify-content: start;
+  justify-content: center;
   align-content: start;
   grid-auto-rows: 112px;
   gap: 12px;
