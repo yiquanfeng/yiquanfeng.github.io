@@ -75,11 +75,11 @@ body {
 .works-board {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, 136px);
+  grid-template-columns: repeat(auto-fill, 204px);
   flex: 1;
   justify-content: start;
   align-content: start;
-  grid-auto-rows: 136px;
+  grid-auto-rows: 204px;
   gap: 14px;
   padding: 16px;
   border: 2px solid var(--line);
@@ -89,7 +89,7 @@ body {
 
 .work-tile {
   aspect-ratio: 1 / 1;
-  min-height: 136px;
+  min-height: 204px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -293,8 +293,8 @@ body {
 
 @media (max-width: 760px) {
   .works-board {
-    grid-template-columns: repeat(3, 112px);
-    grid-auto-rows: 112px;
+    grid-template-columns: repeat(auto-fill, 160px);
+    grid-auto-rows: 160px;
   }
 
   .tool-grid {
@@ -330,13 +330,13 @@ body {
 
   .works-board {
     width: 100%;
-    grid-template-columns: repeat(2, 112px);
-    grid-auto-rows: 112px;
+    grid-template-columns: repeat(auto-fill, 148px);
+    grid-auto-rows: 148px;
     gap: 10px;
     padding: 12px;
   }
 
   .work-tile {
-    min-height: 112px;
+    min-height: 148px;
   }
 }
