@@ -224,6 +224,109 @@ body {
   line-height: 1.7;
 }
 
+/* ── Temporary courses ───────────────────────────────────────────────────── */
+
+.tc-section {
+  margin-bottom: 18px;
+}
+
+.tc-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tc-add-btn {
+  padding: 4px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.tc-add-btn:hover {
+  background: #f8f8f2;
+}
+
+.tc-empty-hint {
+  margin: 0 0 4px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.tc-card {
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 8px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.tc-row {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.tc-row:last-child {
+  margin-bottom: 0;
+}
+
+.tc-row-top {
+  grid-template-columns: 2fr 1fr 1fr 24px;
+  align-items: center;
+}
+
+.tc-row-bottom {
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+}
+
+.tc-input,
+.tc-select {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: #f8f8f4;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.83rem;
+}
+
+.tc-input::placeholder {
+  color: #aaa;
+}
+
+.tc-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tc-remove:hover {
+  background: #fee;
+  border-color: #dbb;
+  color: #a33;
+}
+
+/* ── End temporary courses ───────────────────────────────────────────────── */
+
 .tool-actions,
 .download-row {
   display: flex;

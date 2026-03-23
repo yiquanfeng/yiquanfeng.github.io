@@ -6,6 +6,9 @@ const previewText = document.querySelector("#preview-text");
 const downloadLink = document.querySelector("#download-ics");
 const templateButton = document.querySelector("#download-template");
 const csvHint = document.querySelector("#csv-hint");
+const addTempBtn = document.querySelector("#add-temp-course");
+const tempList = document.querySelector("#temp-courses-list");
+const tcEmptyHint = document.querySelector("#tc-empty-hint");
 
 csvFileInput.addEventListener("change", () => {
   const file = csvFileInput.files?.[0];
@@ -13,6 +16,92 @@ csvFileInput.addEventListener("change", () => {
     csvHint.style.display = file && file.name.toLowerCase().endsWith(".csv") ? "" : "none";
   }
 });
+
+// ── Temporary courses ─────────────────────────────────────────────────────
+
+addTempBtn.addEventListener("click", () => {
+  addTempCourseCard();
+});
+
+function addTempCourseCard(data) {
+  tcEmptyHint.style.display = "none";
+
+  const card = document.createElement("div");
+  card.className = "tc-card";
+
+  card.innerHTML = `
+    <div class="tc-row tc-row-top">
+      <input class="tc-input tc-name" type="text" placeholder="课程名" value="${data?.name ?? ""}">
+      <input class="tc-input tc-teacher" type="text" placeholder="教师" value="${data?.teacher ?? ""}">
+      <select class="tc-select tc-weekday">
+        <option value="1">周一</option>
+        <option value="2">周二</option>
+        <option value="3">周三</option>
+        <option value="4">周四</option>
+        <option value="5">周五</option>
+        <option value="6">周六</option>
+        <option value="7">周日</option>
+      </select>
+      <button class="tc-remove" type="button" aria-label="删除">×</button>
+    </div>
+    <div class="tc-row tc-row-bottom">
+      <input class="tc-input tc-weeks" type="text" placeholder="周次（如 3,5,7 或 1-8）" value="${data?.weeks ?? ""}">
+      <input class="tc-input tc-start" type="time" value="${data?.startTime ?? ""}">
+      <input class="tc-input tc-end" type="time" value="${data?.endTime ?? ""}">
+      <input class="tc-input tc-location" type="text" placeholder="教室" value="${data?.location ?? ""}">
+    </div>
+  `;
+
+  if (data?.weekday) {
+    card.querySelector(".tc-weekday").value = String(data.weekday);
+  }
+
+  card.querySelector(".tc-remove").addEventListener("click", () => {
+    card.remove();
+    if (tempList.children.length === 0) {
+      tcEmptyHint.style.display = "";
+    }
+  });
+
+  tempList.appendChild(card);
+}
+
+function getTempCourseRows() {
+  const cards = tempList.querySelectorAll(".tc-card");
+  const rows = [];
+
+  cards.forEach((card, index) => {
+    const name = card.querySelector(".tc-name").value.trim();
+    const teacher = card.querySelector(".tc-teacher").value.trim();
+    const weekday = card.querySelector(".tc-weekday").value;
+    const weeks = card.querySelector(".tc-weeks").value.trim();
+    const startTime = card.querySelector(".tc-start").value.trim();
+    const endTime = card.querySelector(".tc-end").value.trim();
+    const location = card.querySelector(".tc-location").value.trim();
+
+    if (!name && !weeks && !startTime && !endTime) return;
+
+    const label = name || `临时课程 ${index + 1}`;
+    if (!name) throw new Error(`临时课程 ${index + 1}：请填写课程名。`);
+    if (!weeks) throw new Error(`「${label}」：请填写周次。`);
+    if (!startTime) throw new Error(`「${label}」：请填写开始时间。`);
+    if (!endTime) throw new Error(`「${label}」：请填写结束时间。`);
+
+    rows.push({
+      course: name,
+      weekday,
+      startTime,
+      endTime,
+      weeks,
+      location,
+      teacher,
+      note: "",
+      rowNumber: `临时课程${index + 1}`,
+    });
+  });
+
+  return rows;
+}
 
 let currentDownloadUrl = null;
 
@@ -39,7 +128,9 @@ form.addEventListener("submit", async (event) => {
   }
 
   try {
-    const rows = await parseFile(file);
+    const fileRows = await parseFile(file);
+    const tempRows = getTempCourseRows();
+    const rows = [...fileRows, ...tempRows];
     const events = buildEvents(rows, termStart);
     const icsText = buildIcs(events);
 
