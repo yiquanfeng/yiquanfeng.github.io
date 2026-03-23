@@ -5,6 +5,14 @@ const statusText = document.querySelector("#status-text");
 const previewText = document.querySelector("#preview-text");
 const downloadLink = document.querySelector("#download-ics");
 const templateButton = document.querySelector("#download-template");
+const csvHint = document.querySelector("#csv-hint");
+
+csvFileInput.addEventListener("change", () => {
+  const file = csvFileInput.files?.[0];
+  if (csvHint) {
+    csvHint.style.display = file && file.name.toLowerCase().endsWith(".csv") ? "" : "none";
+  }
+});
 
 let currentDownloadUrl = null;
 
@@ -31,8 +39,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   try {
-    const csvText = await file.text();
-    const rows = parseCsv(csvText);
+    const rows = await parseFile(file);
     const events = buildEvents(rows, termStart);
     const icsText = buildIcs(events);
 
@@ -379,4 +386,131 @@ function downloadTextFile(content, filename, mimeType) {
   anchor.download = filename;
   anchor.click();
   URL.revokeObjectURL(url);
+}
+
+// ── XLS / XLSX support ────────────────────────────────────────────────────────
+
+async function parseFile(file) {
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".xls") || name.endsWith(".xlsx")) {
+    return parseXlsFile(file);
+  }
+  const text = await file.text();
+  return parseCsv(text);
+}
+
+async function parseXlsFile(file) {
+  if (typeof XLSX === "undefined") {
+    throw new Error("XLS 解析库加载失败，请刷新页面重试。");
+  }
+  const buffer = await file.arrayBuffer();
+  const workbook = XLSX.read(new Uint8Array(buffer), { type: "array" });
+  return parseBuptWorkbook(workbook);
+}
+
+// BUPT slot → time range mapping (08:00–20:55, 14 slots)
+const SLOT_TIMES = {
+  1:  { start: "08:00", end: "08:45" },
+  2:  { start: "08:50", end: "09:35" },
+  3:  { start: "09:50", end: "10:35" },
+  4:  { start: "10:40", end: "11:25" },
+  5:  { start: "11:30", end: "12:15" },
+  6:  { start: "13:00", end: "13:45" },
+  7:  { start: "13:50", end: "14:35" },
+  8:  { start: "14:45", end: "15:30" },
+  9:  { start: "15:40", end: "16:25" },
+  10: { start: "16:35", end: "17:20" },
+  11: { start: "17:25", end: "18:10" },
+  12: { start: "18:30", end: "19:15" },
+  13: { start: "19:20", end: "20:05" },
+  14: { start: "20:10", end: "20:55" },
+};
+
+function parseBuptWorkbook(workbook) {
+  const sheet = workbook.Sheets[workbook.SheetNames[0]];
+  // raw:true keeps cell text as-is including \n in multiline cells
+  const data = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "", raw: true });
+
+  if (data.length < 4) {
+    throw new Error("XLS 文件格式不符：行数过少，请确认是北邮「学生个人课表」。");
+  }
+
+  // Validate header row (row index 2): should contain 星期一..星期五
+  const headerRow = data[2] || [];
+  if (!String(headerRow[1] || "").includes("星期")) {
+    throw new Error("XLS 文件格式不符：未找到星期表头，请确认是北邮「学生个人课表」。");
+  }
+
+  const rows = [];
+
+  // data[3..16] = slots 1–14 (data[3] → slot 1)
+  for (let ri = 3; ri <= 16 && ri < data.length; ri++) {
+    const slotNum = ri - 2; // ri=3 → slot 1
+    const dataRow = data[ri];
+
+    for (let ci = 1; ci <= 7; ci++) {
+      const cellText = String(dataRow[ci] || "").trim();
+      if (!cellText) continue;
+
+      const courses = parseBuptCourses(cellText);
+
+      for (const course of courses) {
+        if (!course.slots.length || course.slots[0] !== slotNum) continue;
+
+        const firstSlot = course.slots[0];
+        const lastSlot = course.slots[course.slots.length - 1];
+
+        if (!SLOT_TIMES[firstSlot] || !SLOT_TIMES[lastSlot]) continue;
+
+        rows.push({
+          course: course.name,
+          weekday: String(ci),
+          startTime: SLOT_TIMES[firstSlot].start,
+          endTime: SLOT_TIMES[lastSlot].end,
+          weeks: course.weeks,
+          location: course.location,
+          teacher: course.teacher,
+          note: "",
+          rowNumber: ri,
+        });
+      }
+    }
+  }
+
+  if (rows.length === 0) {
+    throw new Error("未解析到任何课程，请确认文件是北邮「学生个人课表」格式。");
+  }
+
+  return rows;
+}
+
+// Parse one cell which may contain multiple courses concatenated with \n.
+// Each course block: name \n teacher \n weeks \n location \n slots
+// e.g. "\n传感技术与应用\n王程\n1-11[周]\n4-302\n[03-04-05]节"
+function parseBuptCourses(text) {
+  const parts = text.split("\n").map((s) => s.trim()).filter(Boolean);
+  const courses = [];
+
+  for (let i = 0; i + 4 < parts.length; i += 5) {
+    const name = parts[i];
+    const teacher = parts[i + 1];
+    const weeksRaw = parts[i + 2]; // e.g. "1-16[周]"
+    const location = parts[i + 3];
+    const slotsRaw = parts[i + 4]; // e.g. "[03-04-05]节"
+
+    // Strip "[周]" suffix → "1-16"
+    const weeks = weeksRaw.replace(/\[周\]$/, "").trim();
+
+    // Parse "[03-04-05]节" → [3, 4, 5]
+    const slotsMatch = slotsRaw.match(/\[(.+?)\]节/);
+    const slots = slotsMatch
+      ? slotsMatch[1].split("-").map((s) => parseInt(s, 10)).filter((n) => !Number.isNaN(n))
+      : [];
+
+    if (name && weeks && slots.length) {
+      courses.push({ name, teacher, weeks, location, slots });
+    }
+  }
+
+  return courses;
 }
