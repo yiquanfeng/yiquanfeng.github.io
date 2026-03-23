@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#111"/>
+  <!-- Header bar — day labels -->
+  <rect x="4" y="4" width="24" height="5" rx="2" fill="#fff" opacity="0.92"/>
+  <!-- Schedule grid: 3 rows × 2 columns, alternating fill to look like real timetable -->
+  <rect x="4"  y="13" width="11" height="4" rx="1.5" fill="#fff"/>
+  <rect x="17" y="13" width="11" height="4" rx="1.5" fill="#fff" opacity="0.22"/>
+  <rect x="4"  y="19" width="11" height="4" rx="1.5" fill="#fff" opacity="0.22"/>
+  <rect x="17" y="19" width="11" height="4" rx="1.5" fill="#fff"/>
+  <rect x="4"  y="25" width="11" height="4" rx="1.5" fill="#fff"/>
+  <rect x="17" y="25" width="11" height="4" rx="1.5" fill="#fff" opacity="0.22"/>
+</svg>
