@@ -42,7 +42,7 @@ function addTempCourseCard(data) {
         <option value="6">周六</option>
         <option value="7">周日</option>
       </select>
-      <button class="tc-remove" type="button" aria-label="删除">×</button>
+      <button class="tc-remove" type="button">删除</button>
     </div>
     <div class="tc-row tc-row-bottom">
       <input class="tc-input tc-weeks" type="text" placeholder="周次（如 3,5,7 或 1-8）" value="${data?.weeks ?? ""}">

@@ -237,19 +237,23 @@ body {
   margin-bottom: 10px;
 }
 
+/* Reuse ghost-button look at a smaller height */
 .tc-add-btn {
-  padding: 4px 12px;
-  border: 1.5px solid var(--line);
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  height: 34px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
   background: #fff;
   color: var(--text);
   font: inherit;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   cursor: pointer;
 }
 
 .tc-add-btn:hover {
-  background: #f8f8f2;
+  background: #fcfcf8;
 }
 
 .tc-empty-hint {
@@ -259,18 +263,17 @@ body {
 }
 
 .tc-card {
-  position: relative;
-  padding: 10px 10px 10px 10px;
+  padding: 12px;
   margin-bottom: 8px;
-  border: 1.5px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #f2f2ea;
 }
 
 .tc-row {
   display: grid;
-  gap: 6px;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 .tc-row:last-child {
@@ -278,50 +281,50 @@ body {
 }
 
 .tc-row-top {
-  grid-template-columns: 2fr 1fr 1fr 24px;
-  align-items: center;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  align-items: start;
 }
 
 .tc-row-bottom {
   grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
 }
 
+/* Match .field input exactly */
 .tc-input,
 .tc-select {
   width: 100%;
-  padding: 7px 9px;
-  border: 1.5px solid var(--line);
-  border-radius: 8px;
-  background: #f8f8f4;
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
   color: var(--text);
   font: inherit;
-  font-size: 0.83rem;
+  font-size: 0.9rem;
 }
 
 .tc-input::placeholder {
-  color: #aaa;
+  color: var(--muted);
 }
 
+/* Match ghost-button at same height as tc-input */
 .tc-remove {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: 1.5px solid var(--line);
-  border-radius: 6px;
+  padding: 0 10px;
+  height: 42px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
   background: #fff;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1;
+  font: inherit;
+  font-size: 0.84rem;
   cursor: pointer;
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .tc-remove:hover {
-  background: #fee;
-  border-color: #dbb;
+  border-color: #c9b0b0;
   color: #a33;
 }
 
