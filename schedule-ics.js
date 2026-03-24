@@ -576,18 +576,32 @@ function parseBuptWorkbook(workbook) {
 }
 
 // Parse one cell which may contain multiple courses concatenated with \n.
-// Each course block: name \n teacher \n weeks \n location \n slots
-// e.g. "\n传感技术与应用\n王程\n1-11[周]\n4-302\n[03-04-05]节"
+// Standard block: name \n teacher \n weeks \n location \n slots
+// Extended block:  name \n extra \n teacher \n weeks \n location \n slots
+// e.g. "\n健美操\n(188)\n韩笑\n1-16[周]\n体育场\n[08-09]节"
+// We locate the slots field (ends with ]节) and work backwards for the fixed
+// trailing fields, so any extra fields between name and teacher are skipped.
 function parseBuptCourses(text) {
   const parts = text.split("\n").map((s) => s.trim()).filter(Boolean);
   const courses = [];
 
-  for (let i = 0; i + 4 < parts.length; i += 5) {
+  let i = 0;
+  while (i < parts.length) {
+    // Find the next slots field starting at least 4 positions ahead (min 5 fields).
+    let slotsIdx = -1;
+    for (let j = i + 4; j < parts.length; j++) {
+      if (/\[.+?\]节$/.test(parts[j])) {
+        slotsIdx = j;
+        break;
+      }
+    }
+    if (slotsIdx === -1) break;
+
     const name = parts[i];
-    const teacher = parts[i + 1];
-    const weeksRaw = parts[i + 2]; // e.g. "1-16[周]"
-    const location = parts[i + 3];
-    const slotsRaw = parts[i + 4]; // e.g. "[03-04-05]节"
+    const teacher = parts[slotsIdx - 3]; // always 3 positions before slots
+    const weeksRaw = parts[slotsIdx - 2]; // e.g. "1-16[周]"
+    const location = parts[slotsIdx - 1];
+    const slotsRaw = parts[slotsIdx];   // e.g. "[08-09]节"
 
     // Strip "[周]" suffix → "1-16"
     const weeks = weeksRaw.replace(/\[周\]$/, "").trim();
@@ -601,6 +615,8 @@ function parseBuptCourses(text) {
     if (name && weeks && slots.length) {
       courses.push({ name, teacher, weeks, location, slots });
     }
+
+    i = slotsIdx + 1;
   }
 
   return courses;
